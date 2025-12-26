@@ -1,0 +1,35 @@
+\subsection{Singular Value Decomposition}
+\tsDef{9.3.1 (Singular Value Decomposition)}{Let $A\in\mathbb{R}^{m\times n}$. There exist orthogonal matrices
+    $U\in\mathbb{R}^{m\times m}$ and $V\in\mathbb{R}^{n\times n}$ and a diagonal
+    matrix $\Sigma\in\mathbb{R}^{m\times n}$ with nonnegative diagonal entries
+    $\sigma_1\ge\cdots\ge\sigma_{\min(m,n)}$ such that
+    \[
+        A = U\Sigma V^\top.
+    \]
+    The columns of $U$ and $V$ are called the left and right singular vectors of
+    $A$, and the diagonal entries of $\Sigma$ are the singular values of $A$.
+}
+\tsIdea{R 9.3.2 (Compact form of SVD)}{If $\operatorname{rank}(A)=r$, then the SVD can be written as
+    \[
+        A = U_r \Sigma_r V_r^\top,
+    \]
+    where $U_r\in\mathbb{R}^{m\times r}$ and $V_r\in\mathbb{R}^{n\times r}$ have
+    orthonormal columns, and
+    $\Sigma_r=\operatorname{diag}(\sigma_1,\dots,\sigma_r)$. This representation stores $r(m+n+1)$ real numbers instead of $mn$.
+    For small $r$, this yields substantial savings and motivates
+    low-rank approximations.
+}
+\newline
+\tsThe{9.3.3 (Every matrix has SVD)}{Every matrix $A\in\mathbb{R}^{m\times n}$ has SVD:
+    $A=U\Sigma V^\top$. Equivalently, every linear transformation is diagonal in
+    orthonormal bases of singular vectors.
+}
+\newline
+\tsProp{9.3.4 (SVD as a sum of rank-one matrices)}{Let $A\in\mathbb{R}^{m\times n}$ have rank $r$, with singular values
+    $\sigma_1,\dots,\sigma_r$ and corresponding singular vectors
+    $u_1,\dots,u_r$ and $v_1,\dots,v_r$. Then
+    \[
+        A=\sum_{k=1}^r \sigma_k\,u_k v_k^\top.
+    \]
+    Main idea: \textit{We can write any rank-$r$ matrix $A \in \tsS{R}^{m \times n}$ as a sum of \(r\) rank-1 matrices.}
+}

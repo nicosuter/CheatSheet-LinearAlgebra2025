@@ -1,0 +1,116 @@
+\subsection*{Notes and ideas}
+\tsIdea{Pythagorean theorem}
+{If two vectors are orthogonal, then their squared lengths add:
+    \\
+    \(\|\tsV{x} + \tsV{y}\|^2 = \tsV{x}^\top \tsV{x} + 2\underbrace{\tsV{x}^\top \tsV{y}}_{=0} + \tsV{y}^\top \tsV{y} = \|\tsV{x}\|^2 + \|\tsV{y}\|^2\)
+}
+\newline
+\tsIdea{Linearity Proof}
+{To prove linearity insert arbitrary
+    $\tsV{v}, \tsV{w} \in \mathbb{R}$ and $\alpha \in \tsS{R}$ to $f(\tsV{v} + \alpha\tsV{w})$
+}
+\newline
+\tsIdea{Non-trivial nullspace and solutions}
+{When  \(m < n\) then there exists a nontrivial null space, which prevents uniqueness of a solution. Let \(A \in \tsS{R}^{m \times n}\), then there exists \(\tsV{x} \neq 0\) but \(A\tsV{x} = 0\):
+    \\
+    \(\text{rank}(A) \leq m < n \Rightarrow dim(N(A))=n-\text{rank}(A \geq 1)\)
+}
+\newline
+\tsIdea{Linear dependence}
+{The vectors $v_1, v_2, v_3$ are \emph{linearly dependent} if there exist scalars
+    $a_1, a_2, a_3$, not all zero, such that
+    \(
+    a_1 v_1 + a_2 v_2 + a_3 v_3 = \mathbf{0}.
+    \)
+}
+\newline
+\tsIdea{Invertible matrix properties}
+{\(A\) is invertible
+    \\
+    \(\Leftrightarrow\) \(A\tsV{x}=\tsVec{b}\) has a unique solution for every \(\tsVec{b}\)
+    \\
+    \(\Leftrightarrow\) \(N(A) = \tsB{0}\)
+    \\
+    \(\Leftrightarrow\) \(\text{rank}(A) = n\)
+    \\
+    \(\Leftrightarrow\) columns of \(A\) are lin. independent
+}
+\newline
+\tsIdea{Homogenous system solutions}
+{A homogenous system \(A\tsVec{x} = 0\) has either one solution \(x = 0\) or infinitely many solutions: all scaled \(\alpha \tsV{x}\).
+}
+\newline
+\tsIdea{Square a sum}{
+    \((\sum_{i=1}^{n} \lambda_i)^2 = (\sum_{i=1}^{n} \lambda_i)(\sum_{j=1}^{n} \lambda_j)
+    \\
+    = \sum_{i=1}^{n}\sum_{j=1}^{n}\lambda_i\lambda_j = \sum_{i=1}^{n}\lambda_i^2 + \sum_{i\neq j}^{} \lambda_i \lambda_j\)
+    \\
+    That is why \(\text{Tr}(A^2) \leq \text{Tr}(A)^2\). When all eigenvalues are zero or at most one is not zero, then this becomes equal.
+}
+\newline
+\tsIdea{Dot product concept}{Dot product tells you how much two vectors point in the same direction.
+    \begin{itemize}[noitemsep, topsep=0pt]
+        \item $u^T w < 0$: pointing opposite to $w$
+        \item $u^T w = 0$: perpendicular to $w$
+        \item $u^T w > 0$: pointing partly in the same direction as $w$
+    \end{itemize}
+}
+\tsIdea{Prove the dimension of a subspace}{Write the general matrix, apply the constraints, deconstruct into linear combination of independent variables, prove that they span the space, show that they are linearly independent.}
+\newline
+\tsIdea{Singular Values inversion}{Since
+    \(
+    \sigma_1 \ge \cdots \ge \sigma_n > 0,
+    \)
+    it follows that
+    \(
+    \frac{1}{\sigma_1} \le \cdots \le \frac{1}{\sigma_n},
+    \)
+    and therefore, when ordered decreasingly, the singular values of \( A^{-1} \) are
+    \(
+    \frac{1}{\sigma_n}, \ldots, \frac{1}{\sigma_1}.
+    \)
+}
+\newline
+\tsIdea{Invertible matrix singular values}{Invertible matrix singular values are strictly positive.}
+\newline
+\tsIdea{Creative Gauchy-Schwarz Inequality}{To prove
+    \(
+    \sum_{i=1}^n \frac{a_i^2}{b_i}
+    \;\ge\;
+    \frac{\left(\sum_{i=1}^n a_i\right)^2}{\sum_{i=1}^n b_i},
+    \)
+    apply the Cauchy-Schwarz inequality to the vectors
+    \(
+    \left(
+    \frac{a_1}{\sqrt{b_1}},
+    \dots,
+    \frac{a_n}{\sqrt{b_n}}
+    \right)
+    \quad\text{and}\quad
+    \left(
+    \sqrt{b_1},
+    \dots,
+    \sqrt{b_n}
+    \right).
+    \)
+    Their dot product is
+    \(
+    \sum_{i=1}^n a_i,
+    \)
+    and their squared norms are
+    \(
+    \sum_{i=1}^n \frac{a_i^2}{b_i}
+    \quad\text{and}\quad
+    \sum_{i=1}^n b_i.
+    \)
+    By Cauchy-Schwarz,
+    \\
+    \(
+    \left(\sum_{i=1}^n a_i\right)^2
+    \le
+    \left(\sum_{i=1}^n \frac{a_i^2}{b_i}\right)
+    \left(\sum_{i=1}^n b_i\right),
+    \)
+    \\
+    which rearranges by division with a sum of \(b\) to the desired inequality.
+}

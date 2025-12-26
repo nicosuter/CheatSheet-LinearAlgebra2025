@@ -1,0 +1,42 @@
+\tsDef{1.4 (Linear Combination)}{let \(v,w \in \mathbb{R}^m, \lambda,\mu \in \mathbb{R}
+    \\ \Rightarrow \sum_{i=1}^{n}\lambda_i v_i\) are scaled combinations of \(n\) vectors \(v_i\).}
+\newline
+\tsDef{1.7 (Combination types)}{\textbf{Affine Combination:} $\sum_{i=1}^{n}\lambda_i=1$
+    \\
+    \textbf{Conic Combination:} if \(\lambda_j \geq 0\) for \(j=1,2,\dots,n\)
+    \\
+    \textbf{Convex Combination:} Affine + Conic
+}
+\newline
+\tsDef{1.9 (Scalar/dot product)}{$\mathbf{v} \cdot \mathbf{w} := \sum_{i=1}^{m}v_i w_i$
+, altetnative notation: \([z_i]_{i=1}^m := [v_i + w_i]_{i=1}^m\)
+}
+\newline
+\tsDef{1.11 (Euclidean norm, squared norm, unit vector)}{\(\|\mathbf{v}\| := \sqrt{\mathbf{v} \cdot \mathbf{v}} = \sqrt{\mathbf{v}^\top \mathbf{v}}\),
+    \ \textbf{Squared norm:} \(\|\mathbf{v}\|^2 := \mathbf{v}^\top \mathbf{v}\),
+    \\
+    \textbf{Unit vector:} \(\|\mathbf{u}\| = 1 = \frac{\mathbf{v}}{\|\mathbf{v}\|} = \frac{1}{\|\mathbf{v}\|}\mathbf{v}\) (for any vector $\mathbf{v} \neq 0$)
+}
+\newline
+\tsLem{1.12 (Cauchy-Schwarz inequality)}{$|\mathbf{v} \cdot \mathbf{w}| \leq \|\mathbf{v}\|\|\mathbf{w}\|$ for any two vectors \(\mathbf{v}, \mathbf{w} \in \mathbb{R}^m\)}
+\newline
+\tsDef{1.14 (Angle between vectors)}{\(\text{cos}(\alpha) = \frac{\mathbf{v} \cdot \mathbf{w}}{\|\mathbf{v}\|\|\mathbf{w}\|} \in [-1, 1]\)}
+\newline
+\tsDef{1.16 (Hyperplane through origin)}{Let \(\mathbf{d} \in \mathbb{R}^m, \ \mathbf{d}\neq0\), \(H_\mathbf{d} = \{\mathbf{v} \in \mathbb{R}^m : \mathbf{v} \cdot \mathbf{d} = 0\}\)}
+\newline
+\tsLem{1.16 (Triangle inequality)}{$\|\mathbf{v}+\mathbf{w}\| \leq \|\mathbf{v}\| + \|\mathbf{w}\|$}
+\newline
+\tsDef{1.21 (Linear (in)dependence)}{vectors are linearly dependent if one of them is linear combination of the others: \(\mathbf{v}_k = \sum^{n}_{\substack{j=1 \\ j \ne k}} \lambda_j \mathbf{v}_j\)
+    \\ $\Leftrightarrow$ There are scalars $\lambda_1, \lambda_2, \ldots, \lambda_n$ besides $0,0,\ldots,0$ such that \(\sum_{j=1}^{n} \lambda_j \mathbf{v}_j = \mathbf{0}.\) We also say that $\mathbf{0}$ is a nontrivial linear combination of the vectors.
+    \\ $\Leftrightarrow$ At least one of the vectors is a linear combination of the previous ones.
+}
+\newline
+\tsDef{1.25 (Span)}{Span of vectors is a set of all linear combinations of those vectors:
+    $
+        \mathbf{Span}(\mathbf{v}_1,\mathbf{v}_2,...,\mathbf{v}_n)
+        :=
+        \left\{ \sum_{j=1}^{n} \lambda_j \mathbf{v}_j : \lambda_j \in \mathbb{R} \text{ for all } j \in [n] \right\}
+    $
+}
+\tsIdea{Construction of vectors with standard unit vectors}{Every target vector can be written as:
+    $\mathbf{u} = \sum^{m}_{i=1}u_i \mathbf{e}_i$, where $\mathbf{e}$ is a standard unit vector.}

@@ -1,0 +1,16 @@
+\subsection{Definition}
+\tsIdea{Orthogonality}{A geometric and algebraic tool in order to be able to decompose a space into subspaces.}
+\newline
+\tsDef{5.1.1 (Orthogonal subspaces)}{Two vectors are orthogonal if their scalar product is 0: $v^{\top} w = \sum_{i=1}^{n} v_i w_i = 0$. Two subspaces are orthogonal if all \(v\) and \(w\) are orthogonal.}
+\newline
+\tsLem{5.1.2 (Orthogonality of bases)}{Let \(v_1,...,v_2\) and \(w_1, ..., w_2\) be bases of subspaces \(W\) and \(V\). \(W\) and \(V\) are orthogonal \(\Leftrightarrow\) all \(v_i\) orthogonal to all \(w_j\)}
+\newline
+\tsLem{5.1.3 (Combinations and interaction of subspaces)}{The set of vectors $\{v_1,...,v_2, w_1, ..., w_2\}$ are linearly independent. $\tsPoint$ The union of bases of two subspaces gives a basis for the new subspace: \(V \cup W = V + W = \{\lambda v + \mu w \mid \lambda, \mu \in \mathbb{R},\; v \in V,\; w \in W\}.\)} $\tsPoint$ If $V$ and $W$ are subspaces of  $\mathbb{R}^n$, then $V + W$ is a subspace of $\mathbb{R}^n$. $\tsPoint$ \(V \cap W = \{0\}\) if subspaces are orthogonal. $\tsPoint$ $\dim(V) = k \ \text{and} \ \dim(W) = l,\ \text{then } \dim(V + W) = k + l \le n.$
+\newline
+\tsDef{5.1.5 (Orthogonal complement)}{Let V be a subspace of $\mathbb{R}^n$, its \textbf{orthogonal complement}: \\ \(V^{\perp} = \{\, w \in \mathbb{R}^n \mid w^{T} v = 0 \text{ for all } v \in V \,\}.\)}
+\newline
+\tsThe{5.1.6 (Relations between subspaces)}{\(N(A) = C(A^\top)^{\perp} = R(A)^{\perp}\) and \(C(A^\top) = N(A)^\perp\)}
+\newline
+\tsThe{5.1.7 (Vector decomposition by orth. complements)}{\(W = V^{\perp} \Leftrightarrow dim(V) + dim(W) = n \Leftrightarrow \text{ every } u \in \mathbb{R}^n \text{ is } u = v + w\), \(v\) and \(w\) are unique.}
+\newline
+\tsLem{5.1.10 (Justification of exist. of sol. for normal eq.)}{Let \(A \in \mathbb{R}^{m \times n}\). Then \(N(A) = N(A^{T}A)\) and \(C(A^{T}) = C(A^{T}A)\).}

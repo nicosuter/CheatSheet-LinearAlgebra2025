@@ -1,0 +1,149 @@
+% \fontsize{7pt}{8pt}\selectfont
+% \section{Orthogonality and Projections}
+% \input{5.1-orthogonality}
+% \input{5.2-projections}
+% \section{Applications of Orthogonality and Projections}
+% \input{6.1-leastSquaresApproximation}
+% \input{6.2-setOfAllSolutions}
+% \input{6.3-orthonormalBasesAndGramSchmidt}
+
+% \begin{tabular}{p{0.29\textwidth} p{0.29\textwidth} p{0.29\textwidth}}
+%     \section{Orthogonality and Projections}
+%     \input{5.1-orthogonality}
+%     \input{5.2-projections}
+%      &
+%     \section{Applications of Orthogonality and Projections}
+%     \input{6.1-leastSquaresApproximation}
+%     \input{6.2-setOfAllSolutions}
+%     \input{6.3-orthonormalBasesAndGramSchmidt}
+% \end{tabular}
+% \subsection{Projection}
+
+
+
+
+% \newpage
+% \cheatmodule{Linear equations has no solution}{
+%     \[
+%         \{\, x \in \mathbb{R}^n \mid Ax = b \,\} = \varnothing
+%         \;\Longleftrightarrow\;
+%         \{\, z \in \mathbb{R}^m \mid A^{T} z = 0,\; b^{T} z = 1 \,\} \neq \varnothing .
+%     \]
+
+% }
+
+% \cheatmodule{Pseudoinverse}{\\
+%     \(A^\dagger = (A^\top A)^{-1}A^\top\) for A \(\in \mathbb{R}^{m \times n}\)  with rank($A$) = $n$ \\
+%     Left inverse: \(A^\dagger A = I\) \\
+%     \(A^\dagger = A^\top (A A^\top)^{-1}\) for A \(\in \mathbb{R}^{m \times n}\)  with rank($A$) = $m$ \\
+%     Right inverse: \(AA^\dagger = I\) \\
+%     \(A^\dagger = R^\dagger C^\dagger\) with rank($A$) = $r$ \\
+%     \(
+%     AA^{\dagger}A = A
+%     \quad\text{and}\quad
+%     A^{\dagger}AA^{\dagger} = A^{\dagger}
+%     \quad\text{and}\quad
+%     (A^{\top})^{\dagger} = (A^{\dagger})^{\top}.
+%     \)
+
+%     \(
+%     AA^{\dagger} \text{ is symmetric. It is the projection matrix for projection onto } \mathbb{C}(A),
+%     \)
+
+%     \(
+%     A^{\dagger}A \text{ is symmetric. It is the projection matrix for projection onto } \mathbb{C}(A^{\top}).
+%     \)
+
+% }
+
+% \cheatmodule{Orthogonal matrix properties}{
+%     \begin{enumerate}[(a)]
+%         \item Orthonormal vectors: \(q_i^\top q_j = \delta_{ij} = \begin{cases}
+%                   0 & i\neq j \\
+%                   1 & i = j
+%               \end{cases}\)
+%         \item $Q^{\top} Q = I$
+%         \item \(Q^\top = Q^{-1}\)
+%         \item \(QQ^\top = I \Leftrightarrow Q\) is \(m \times m\)
+%     \end{enumerate}
+% }
+% \cheatmodule{Rotation Matrix}{
+%     \[
+%         R_\theta =
+%         \begin{bmatrix}
+%             \cos\theta & -\sin\theta \\
+%             \sin\theta & \cos\theta
+%         \end{bmatrix}.
+%     \]
+
+% }
+% \cheatmodule{Determinant general:}{
+
+%     \[
+%         \det((\lambda)A)
+%         = \sum_{\sigma \in \Pi_n} \operatorname{sgn}(\sigma)
+%         \prod_{i=1}^{n} (\lambda \cdot) a_{i,\sigma(i)} .
+%     \]
+
+% }
+% \cheatmodule{Determinant $2 \times 2$:}{
+%     $det(A) = ad-bc$
+% }
+% \cheatmodule{Gram-Schimdt Process}{
+%     \begin{itemize}
+%         \item $q_1 = \dfrac{a_1}{\|a_1\|}.$
+
+%         \item For $k = 2, \ldots, n$ set
+%               \(
+%               q_k' = a_k - \sum_{i=1}^{k-1} (a_k^\top q_i)\, q_i \\
+%               q_k = \frac{q_k'}{\|q_k'\|}.
+%               \)
+%     \end{itemize}
+
+% }
+% \cheatmodule{Determinant properties}{
+%     \begin{enumerate}[(a)]
+%         \item \(\det(A) = 1 \Rightarrow \) rotation matrix
+%         \item \(\det(A) = -1 \Rightarrow \) reflection matrix
+%         \item $A^{-1}
+%                   = \frac{1}{ad - bc}
+%                   \begin{bmatrix}
+%                       d  & -b \\
+%                       -c & a
+%                   \end{bmatrix} \Rightarrow
+%               $ inverse $2 \times 2$
+%         \item \(\det(A) = \det(A^{T})\)
+
+%         \item \(\det(T) = \prod_{i} T_{ii}\)
+
+%         \item \(\det(AB) = \det(A)\,\det(B)\)
+
+%         \item \(\det(A + B) \neq \det(A) + \det(B)\)
+
+%         \item $\det(\lambda A) = \lambda^{n} \det(A)$
+%     \end{enumerate}
+% }
+
+
+
+% --- Cheat Sheet Module Environment ---
+\newtcolorbox{cheatbox}[1][]{
+    colback=gray!5,
+    colframe=black!70,
+    sharp corners,
+    boxrule=0.5pt,
+    left=6pt,
+    right=6pt,
+    top=6pt,
+    bottom=6pt,
+    #1
+}
+
+\newcommand{\limToInf}{\lim_{n\to\infty}}
+
+\newcommand{\cheatmodule}[2]{
+    \begin{cheatbox}
+        \textbf{#1}
+        #2
+    \end{cheatbox}
+}

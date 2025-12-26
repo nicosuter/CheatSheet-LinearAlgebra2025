@@ -1,0 +1,124 @@
+\subsection{Symmetric Matrices, Spectral Theorem}
+\tsThe{9.2.1 (Spectral Theorem)}{Any symmetric matrix $A \in \mathbb{R}^{n \times n}$ has $n$ real eigenvalues
+    and an orthonormal basis of $\mathbb{R}^n$ consisting of eigenvectors of \(A\).
+}
+\newline
+\tsCor{9.2.2 (Eigendecomposition)}{For any symmetric matrix $A \in \mathbb{R}^{n \times n}$, there exists an
+    orthogonal matrix $V \in \mathbb{R}^{n \times n}$ (whose columns are
+    eigenvectors of $A$) such that
+    \(
+    A = V \Lambda V^T,
+    \)
+    where $\Lambda \in \mathbb{R}^{n \times n}$ is diagonal with diagonal entries
+    equal to the eigenvalues of $A$, and
+    \(
+    V^T V = I.
+    \)
+    This decomposition is called the \emph{eigendecomposition}.
+}
+\newline
+\tsCor{9.2.4 (Rank of real symmetric matrix)}{If $A$ is a real symmetric matrix, then
+    \(
+    \operatorname{rank}(A)
+    \)
+    is the number of nonzero eigenvalues of $A$ (counting repetitions).
+    \\
+    $\bullet$ For a general $n \times n$ matrix,
+    \(
+    \operatorname{rank}(A) = n - \dim \mathcal{N}(A),
+    \)
+    so the geometric multiplicity of the eigenvalue $\lambda = 0$ equals
+    $\dim \mathcal{N}(A)$.
+}
+\newline
+\tsProp{9.2.6 (Rank-One Spectral Decomposition)}{Let $A \in \mathbb{R}^{n \times n}$ be symmetric, and let
+    $v_1, \ldots, v_n$ be an orthonormal basis of eigenvectors of $A$
+    (the columns of $V$), with associated eigenvalues
+    $\lambda_1, \ldots, \lambda_n$.
+    Then
+    \(
+    A = \sum_{k=1}^n \lambda_k \, v_k v_k^T.
+    \)
+    \\
+    \textit{A real symmetric matrix is a weighted sum of orthogonal projections onto its eigenvector directions, with weights given by the eigenvalues.}
+}
+\newline
+\tsLem{9.2.7 (Orthogonality of EV)}{Let $A \in \mathbb{R}^{n \times n}$ be symmetric and let
+    $\lambda_1 \neq \lambda_2 \in \mathbb{R}$ be two distinct eigenvalues of $A$
+    with corresponding eigenvectors $v_1, v_2$.
+    Then $v_1$ and $v_2$ are orthogonal.
+}
+\newline
+\tsLem{9.2.8 (Symmetric matrix has real EW)}{A symmetric matrix $A \in \mathbb{R}^{n \times n}$ has only real eigenvalues:
+    \(
+    \lambda \in \mathbb{C} \quad \Rightarrow \quad \lambda \in \mathbb{R}.
+    \) Indeed, if $Av = \lambda v$: \\
+    \(
+    \lambda \|v\|^2
+    = \overline{\lambda} \, v^* v
+    = (\lambda v)^* v
+    = (Av)^* v
+    = v^* A^* v
+    = v^* A v
+    = v^* \lambda v
+    = \lambda \|v\|^2.
+    \)
+    $\Rightarrow$ every symmetric matrix
+    $A \in \mathbb{R}^{n \times n}$
+    has a real eigenvalue. \hfill (C 9.2.9)
+}
+\newline
+\tsProp{9.2.10 (Rayleigh Quotient)}{$A \in \mathbb{R}^{n \times n}$ is symmetric. For
+    $x \in \mathbb{R}^n \setminus \{0\}$, the Rayleigh quotient
+    \(
+    R(x) = \frac{x^T A x}{x^T x}.
+    \)
+    \\
+    The minimum of $R$ =
+    \(
+    R(v_{\min}) = \lambda_{\min},
+    \)
+    and the maximum
+    \(
+    R(v_{\max}) = \lambda_{\max}.
+    \)
+    Here $\lambda_{\max}$/$\lambda_{\min}$ are the largest/smallest
+    eigenvalues of $A$, and
+    $v_{\max}/v_{\min}$ their associated eigenvectors.
+}
+\newline
+\tsDef{9.2.11 (PSD and PD matrices)}{\(A=A^\top
+    \bullet \ A\succeq 0 \ \textbf{(PSD)} \Leftrightarrow \lambda_i(A)\ge 0 \
+    \bullet \ A\succ 0 \ \textbf{(PD)}  \Leftrightarrow \lambda_i(A)>0.
+    \)
+}
+\newline
+\tsProp{9.2.12 (Positivity of the quadratic form)}{Let $A\in\mathbb{R}^{n\times n}$ be symmetric. Then
+    \(
+    A\succeq 0 \iff x^\top A x \ge 0 \quad \forall x\in\mathbb{R}^n,
+    \)
+    and
+    \(
+    A\succ 0 \iff x^\top A x > 0 \quad \forall x\neq 0.
+    \)
+}
+\newline
+\tsDef{9.2.13 (Gram Matrix)}{Given vectors $v_1,\dots,v_n\in\mathbb{R}^m$, their \emph{Gram matrix} is
+$G\in\mathbb{R}^{n\times n}$ defined by
+\(
+G_{ij}=v_i^\top v_j.
+\)
+If $V=[v_1\,\cdots\,v_n]\in\mathbb{R}^{m\times n}$, then
+\(
+G=V^\top V.
+\)
+\(\tsPoint\) If $A=[a_1\,\cdots\,a_n]\in\mathbb{R}^{m\times n}$, one also calls
+$AA^\top$ a Gram matrix; note that
+\(
+AA^\top=\sum_{i=1}^n a_i a_i^\top
+\). It is \(m \times m\) matrix.
+}
+\newline
+\tsProp{9.2.15 (Same EV of transposed matrices)}{For a real matrix \(A \in \tsS{R}^{m \times n}\), the non-zero eigenvalues of \(A^\top A \in \mathbb{R}^{n \times n}\) and \(AA^\top \in \mathbb{R}^{m \times m}\) are the same. Also both are symmetric and PSD.}
+\newline
+\tsProp{9.2.16 (Cholesky Decomposition)}{Every symmetric PSD matrix \(M\) is a Gram matrix of upper-triangular matrix \(C\): \(M = C^\top C\).}

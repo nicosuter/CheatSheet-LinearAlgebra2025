@@ -1,0 +1,49 @@
+\subsection{Least Squares Approximation}
+\tsIdea{Least Squares}{Approximate a solution to System of equations: find $x$ for which $Ax$ is as close as possible to $b$: \(\min_{\hat{x} \in \mathbb{R}^n} \,\|A \hat{x} - b\|^{2}\)}
+\\
+\tsIdea{usage}{find \(M=A^\top A, \ b'= A^\top b\), solve \(M\hat{x} = b'\)}
+\\
+\tsIdea{Linear Regression}{Fitting a parabola
+    % \(
+    % \hat{\alpha}
+    % =
+    % \arg\min_{\alpha \in \mathbb{R}^2}
+    % \left\|
+    % A\alpha - b
+    % \right\|^2
+    % =
+    % (A^T A)^{-1}A^T b,
+    % \quad
+    % A =
+    % \begin{pmatrix}
+    %     1      & t_1    \\
+    %     \vdots & \vdots \\
+    %     1      & t_m
+    % \end{pmatrix}
+    % \)
+
+    % \(
+    % \begin{aligned}
+    %     A                                                                    =\begin{pmatrix}1&0\\1&1\\1&2\end{pmatrix},
+    %     b=\begin{pmatrix}1\\2\\2\end{pmatrix}, \hat{\alpha} =(A^TA)^{-1}A^Tb
+    %     =\begin{pmatrix}\tfrac{7}{6}\\ \tfrac{1}{2}\end{pmatrix}, \hat{b}(t) =\tfrac{7}{6}+\tfrac{1}{2}t.
+    % \end{aligned}
+    % \)
+    % Fitting parabola
+    % {\scriptsize
+    \(
+    (t_k,b_k)    =\{(0,1),(1,2),(2,5)\}, \ b_k \approx \alpha_0 + \alpha_1 t_k + \alpha_2 t_k^2 \\
+    A            =\begin{pmatrix}
+        1 & 0 & 0 \\
+        1 & 1 & 1 \\
+        1 & 2 & 4
+    \end{pmatrix},
+    b=\begin{pmatrix}1\\2\\5\end{pmatrix},
+    \hat{\alpha} =(A^TA)^{-1}A^Tb
+    =\begin{pmatrix}1\\0\\1\end{pmatrix},
+    \hat{b}(t)   =1+t^2.
+    \)
+    % }
+}
+\newline
+\tsLem{6.1.2}{A has linearly independent columns \(\Leftrightarrow\) $t_i = t_j \forall i \neq j$}

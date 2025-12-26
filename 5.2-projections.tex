@@ -1,0 +1,10 @@
+\subsection{Projections}
+\tsDef{5.2.1 (Projection)}{\textbf{Projection} of $b \in \mathbb{R}^m$ on a subspace $S$ (of $\mathbb{R}^m$) is the point in $S$ that is closest to $b$: $\operatorname{proj}_S(b) = \arg\min_{p \in S} \lVert b - p \rVert$.}
+\newline
+\tsLem{5.2.2 (One-dimensional Projection Formula)}{Projection of \(b\) on \(S = \{\, \lambda a \mid \lambda \in \mathbb{R} \,\} = C(a)\): \(\operatorname{proj}_S(b) = \frac{a a^{T}}{a^{T} a}\, b.\) \(\tsPoint\)“Error vector” ($e = b-p$) is perpendiculat projection: \((e = b - \operatorname{proj}_S(b)) \;\perp\; \operatorname{proj}_S(b).\)}
+\newline
+\tsLem{5.2.3 (General Projection Formula)}{Let \(S\) be a subspace in \(\mathbb{R}^m\) with a basis $a_1,...,a_n$ that span $S$. Let $A$ be the matrix with column vectors $a_1,...,a_n$. \(\tsPoint\) The general formula: $\operatorname{proj}_S(b) = A \hat{x}, \text{ where } \hat{x} \text{ is } A^{T} A \hat{x} = A^{T} b.$}
+\tsLem{5.2.4 (Properties of $A^\top A$)}{$A^{\top}A$ is invertible \(\Leftrightarrow\) $A$ has linearly independent columns. \(\Rightarrow\) \(A^{\top}A\) is a square matrix, symmetric, invertible.}
+\newline
+\tsThe{5.2.5 (Projection in terms of projection matrix)}{\(\text{proj}_S(b)=Pb\) with projection matrix \(P=A(A^{-1}A)A^{\top}\). \\ A is matrix given in a task.}
+

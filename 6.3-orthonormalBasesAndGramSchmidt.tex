@@ -1,0 +1,22 @@
+\subsection{Orthonormal Bases and Gram Schmidt}
+\tsDef{6.3.1 (Orthonomral vectors)}{\(q_i^\top q_j = \delta_{ij} = \begin{cases} 0 & i\neq j \\ 1 & i = j \end{cases}\) (orthogonal
+    and have norm 1)}
+\newline
+\tsDef{6.3.3 (Orthogonal Matrix)}{A square matrix $Q \in \mathbb{R}^{n \times n}$ is an \emph{orthogonal matrix} when $Q^{\top} Q = I$ If it is square, then, $Q Q^{\top} = I$ , $Q^{-1} = Q^{\top}$, and the columns of $Q$ form an orthonormal basis for $\mathbb{R}^n$. \(\tsPoint\) Orthogonal (rotation) matrix example: {\scriptsize $R_\theta =\begin{bmatrix} \cos\theta & -\sin\theta \\ \sin\theta & \cos\theta \end{bmatrix}.$}}
+\newline
+\tsProp{6.3.6 (Preserving qualities of orthogonal matrices)}{Orthogonal matrices preserve norm and inner product of vectors: $\|Qx\| = \|x\|$ and \((Qx)^\top (Qy) = x^\top y\)}
+\newline
+\tsProp{6.3.7 (Least square solution to \(Qx = b\))}{The least square solution to \(Qx = b\)}, where \(Q\) is the matrix whose columns are the vectors forming the orthonomal basis of \(S \subseteq \mathbb{R}^m\), is given by \(\hat{x}=Q^\top b\) and the projection matrix is given by \(QQ^\top\).
+\newline
+\tsDef{6.3.8 (Gram-Schmidt algorithm)}{\textbf{Gram-Schmidt:} used to construct orthonormal bases. \\ We have linearly indepenedent vectors \(a_1, ..., a_n\) that span a subspace \(S\), then we can construct their orthonormal basis \(q_1,...,q_n\) by:
+    \\
+    $\bullet \ q_1 = \frac{a_1}{\|a_1\|}.$
+    \\
+    $\bullet$ For $k = 2$, \ldots, $n$ do $q_k' = a_k - \sum_{i=1}^{k-1} (a_k^\top q_i)\, q_i$, \\ $\bullet$ normalise $q_k = \frac{q_k'}{\|q_k'\|}.$
+}
+\newline
+\tsDef{6.3.10 (QR-Decomposition)}{\(A=QR\), where \(R = Q^\top A\), and \(Q\) is a matrix with orthonormal columns produced by Gram-Schmidt.}
+\newline
+\tsDef{6.3.11 (Well-Defined QR Decomposition)}{\(R\) - upper-triangluar and invertible matrix \(\Rightarrow QQ^\top A = A\), and hence, \(A = QR\) is well-defined.}
+\newline
+\tsIdea{Simplicity of calculation with Q}{\textbf{Projection:} \(\text{proj}_{C(A)}(b) = QQ^\top b\), \textbf{Least Squares:} \(R\hat{x} = Q^\top b\) \\ This is possible because \(C(A) = C(Q)\) and \(R\) is triangular - we can use back-substitution with it.}

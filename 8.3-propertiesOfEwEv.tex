@@ -1,0 +1,51 @@
+\subsection{Properties of Eigenvalues and Eigenvectors}
+\tsProp{8.3.1 (EW modifications based on types of a matrix)}{If $(\lambda, v)$ is an eigenvalue–eigenvector pair of $A$, then
+    \(
+    (\lambda^k, v)
+    \)
+    is an eigenvalue–eigenvector pair of $A^k$ for $k \ge 1$.
+    \\
+    $\bullet$ If $(\lambda, v)$ is an eigenvalue–eigenvector pair of $A$ with $\lambda \neq 0$, then
+    \(
+    \left(\frac{1}{\lambda}, v\right)
+    \)
+    is an eigenvalue–eigenvector pair of $A^{-1}$.
+}
+\newline
+\tsLem{8.3.2 (Linear independence)}{If $\lambda_1, \ldots, \lambda_n$ are all distinct, the corresponding eigenvectors
+    $v_1, \ldots, v_n$ are linearly independent.
+}
+\newline
+\tsThe{8.3.3 (Existence of a basis from EV)}{Let $A \in \mathbb{R}^{n \times n}$ with $n$ distinct real eigenvalues.
+    Then there exists a basis of $\mathbb{R}^n$,
+    \(
+    v_1, \ldots, v_n,
+    \)
+    made of eigenvectors of $A$.
+}
+\newline
+\tsDef{8.3.4 (Trace of a matrix)}{The trace of $A$ is defined by
+    \(
+    \operatorname{Tr}(A) = \sum_{i=1}^n A_{ii}.
+    \)
+}
+\newline
+\tsLem{8.3.5 (Transposition equality of EW)}{The eigenvalues of $A \in \mathbb{R}^{n \times n}$ are the same as those of $A^T$.
+}
+\newline
+\tsLem{8.3.6 (Determinant and Trace via EW)}{Let $A \in \mathbb{R}^{n \times n}$ and let $\lambda_1, \ldots, \lambda_n$ be its
+    eigenvalues as they appear in the characteristic polynomial. Then \\
+    \(
+    \det(A) = \prod_{i=1}^n \lambda_i, \
+    \operatorname{Tr}(A) = \sum_{i=1}^n \lambda_i.
+    \)
+}
+\newline
+\tsLem{8.3.7 (Cyclic invariance of the trace)}{For $A, B, C \in \mathbb{R}^{n\times n}$:
+    \\
+    \(
+    \operatorname{Tr}(AB) = \operatorname{Tr}(BA),
+    \text{ and }
+    \operatorname{Tr}(ABC) = \operatorname{Tr}(BCA) = \operatorname{Tr}(CAB).
+    \)
+}

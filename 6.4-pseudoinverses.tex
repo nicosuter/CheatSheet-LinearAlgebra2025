@@ -1,0 +1,62 @@
+\subsection{Pseudoinverses}
+\tsDef{6.4.1 (Left pseudoinverse)}{For \(A \in \mathbb{R}^{m\times n}\) with full-column \(\text{rank}(A)=n\), we get pseudoinverse \(A^\dagger \in \mathbb{R}^{n \times m}\) as \(A^\dagger = (A^\top A)^{-1} A^\top \). \(A^\dagger\) is a left inverse: \(A^\dagger A = I\)}
+\newline
+\tsDef{6.4.3 (Right pseudoinverse)}{For \(A \in \mathbb{R}^{m \times n}\) with full row rank \(\text{rank}(A)=m\) we get \(A^\dagger \in \mathbb{R}^{n \times m}\) as \(A^\dagger = A^\top (AA^\top)^-1\). \(A^\dagger\) is a right inverse: \(AA^\dagger = I\)}
+\newline
+\tsDef{6.4.7 (CR decomposition with pseudoinverses)}{For $A \in \mathbb{R}^{m \times n}$ with $\operatorname{rank}(A)=r$ and a $CR$-decomposition $A = CR$, we define
+    \(
+    A^\dagger  = R^{T} C^{T}.
+    \)
+    In general,
+    \(
+    A^\dagger  = R^{T}(RR^{T})^{-1}(C^{T}C)^{-1}C^{T}
+    = R^{T}(C^{T}CRR^{T})^{-1}C^{T}
+    = R^{T}(C^{T}AR^{T})^{-1}C^{T}.
+    \)
+}
+\newline
+\tsLem{6.4.8 (Unique solution of least sq. with pseudoinverses)}{For any matrix $A$ and vector $b \in \mathcal{C}(A)$, the unique solution of the least squares problem is given by a vector $\hat{x} \in \mathcal{C}(A^{T})$ satisfying
+    \(
+    A\hat{x} = b.
+    \)
+    The solution is
+    \(
+    \hat{x} = A^\dagger b,
+    \)
+    with $A\hat{x} = b$, and in the general case
+    \(
+    A^\dagger  = R^{T}C^{T} = R^{T}(C^{T}AR^{T})^{-1}C^{T}.
+    \)
+}
+\newline
+\tsProp{6.4.9 (TS decomposition)}{For $A \in \mathbb{R}^{m \times n}$ with $\operatorname{rank}(A)=r$, let
+    \(
+    S \in \mathbb{R}^{m \times r}, \quad T \in \mathbb{R}^{r \times n}
+    \)
+    such that $A = ST$. Then
+    \(
+    A^\dagger  = T^\dagger S^\dagger .
+    \)
+}
+\newline
+\tsThe{6.4.10 (Pseudoinverses properties)}{Let $A \in \mathbb{R}^{m \times n}$. Then
+    \(
+    AA^\dagger A = A, \quad A^\dagger AA^\dagger  = A^\dagger , \quad (A^\dagger )^{T} = (A^{T})^\dagger .
+    \)
+    \newline
+    \(
+    AA^\dagger  \text{ is symmetric } \Rightarrow \text{ projection matrix onto } \mathcal{C}(A),
+    \newline
+    A^\dagger A \text{ is symmetric } \Rightarrow \text{ projection matrix onto } \mathcal{C}(A^{T}).
+    \)
+    \newline
+    Moreover,
+    \(
+    AA^\dagger  = C R R^{T}(RR^{T})^{-1}(C^{T}C)^{-1}C^{T}
+    = C(C^{T}C)^{-1}C^{T},
+    \)
+    which is the projection onto $\mathcal{C}(A)$, and
+    \(
+    (AA^\dagger )^{T} = AA^\dagger .
+    \)
+}

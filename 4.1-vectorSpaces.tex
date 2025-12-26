@@ -1,0 +1,12 @@
+\subsection{Vector Spaces}
+\tsDef{4.1 (Vector Space)}{Vector space is a triple \((V, +, \cdot)\)} where \(V\) is a set (the vectors) with two operations \(\oplus\) and \(\odot\). They are based on algebras called fields and satisfy axioms: \textit{commutativity, associativity, zero vector, negative vector, identity element, compatibility of multiplications of vectors and scalars ($\in \mathbb{R}$), distributivity over \(\oplus\) both for vectors and scalars ($\in \mathbb{R}$)}.
+\tsDef{4.8 (Subspace)}{Let \(V\) be a vector space. A nonempty subset \(U \subseteq V\)} is a subspace of \(V\) if following axioms are true \(\forall \mathbf{v}, \mathbf{w} \in U\) and \(\forall \lambda \mathbf{v} \in U\): \(\tsPoint \mathbf{v} + \mathbf{w} \in U\)  \(\bullet \ \lambda \mathbf{v} \in U\).
+\\ They guarantee that vector addition and scalar multiplication "doesn't take us outside of a subspace".
+\newline
+\tsLem{4.9 (Subspace always has \textbf{0})}{Let \(U \subseteq V\) be a subspace of a vector space \(V\). Then \(\mathbf{0} \in U\) (at least).}
+\tsLem{4.11 (Column space is a subspace)}{Let \(A \in \mathbb{R}^{m \times n}\), then \(C(A) = \{A \mathbf{x} : \mathbf{x} \in \mathbb{R}^n\}\) is subspace of \(\mathbb{R}^m\). \\ \(\Rightarrow\) \(R(A) = C(A^\top)\) is a subspace of \(\mathbb{R}^n\).}
+\newline
+\tsIdea{E 4.13 (The nullspace is a subspace)}{Let \(A \in \mathbb{R}^{m \times n}\). Then the nullspace \(N(A) = \{\mathbf{x} \in \mathbb{R}^n : A\tsVec{v} = 0\}\) is a subspace of \(\mathbb{R}^n\)}
+\newline
+\tsLem{4.14 (Subspaces are vector spaces)}{\(V\) is a vector space and \(U\) is its subspace. Then \(U\) is also a vector space with the same \(\oplus\) and \(\odot\) as \(V\).}
+\newline

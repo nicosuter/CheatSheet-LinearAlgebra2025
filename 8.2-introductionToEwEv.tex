@@ -1,0 +1,48 @@
+\subsection{Introduction to Eigenvalues and Eigenvectors}
+\tsDef{8.2.1 (EW/EV pair)}{Given $A \in \mathbb{R}^{n \times n}$, we say $\lambda \in \mathbb{C}$ is an
+    \emph{eigenvalue} of $A$ and $v \in \mathbb{C}^n \setminus \{0\}$ is an
+    \emph{eigenvector} of $A$ associated with $\lambda$ when
+    \(
+    Av = \lambda v.
+    \)
+    $(\lambda, v)$ is an eigenvalue–eigenvector pair.
+    If $\lambda \in \mathbb{R}$, then we have a real eigenvalue–eigenvector pair.
+}
+\newline
+\tsLem{8.2.3 (Real EW/EV)}{Let $A \in \mathbb{R}^{n \times n}$. Then $\lambda \in \mathbb{R}$ is a real eigenvalue
+    of $A$ if and only if
+    \(
+    \det(A - \lambda I) = 0.
+    \)
+    A vector $v \in \mathbb{R}^n \setminus \{0\}$ is an eigenvector associated with $\lambda$
+    if and only if
+    \(
+    v \in \mathcal{N}(A - \lambda I).
+    \)
+}
+\newline
+\tsDef{8.3.4 (Characteristic Polynomial)}{The characteristic polynomial:
+    \(
+    (-1)^n \det(A - zI) = \det(zI - A)
+    = (z - \lambda_1)(z - \lambda_2)\cdots(z - \lambda_n).
+    \)
+}
+The coefficient of $z^n$ is $(-1)^n$.
+\newline
+\tsThe{8.2.5 (Existence of EW)}{Every matrix $A \in \mathbb{R}^{n \times n}$ has an eigenvalue
+    (possibly complex-valued).
+}
+\newline
+\tsProp{8.2.7 (EW of orthogonal matrix)}{If $Q \in \mathbb{R}^{n \times n}$ is orthogonal and $\lambda \in \mathbb{C}$ is an
+    eigenvalue of $Q$, then
+    \(
+    |\lambda| = 1.
+    \)
+}
+\newline
+\tsLem{8.2.8 (Complex EW exist in conjugate pairs for real \(A\))}{Let $A \in \mathbb{R}^{n \times n}$. If $(\lambda, v)$ is an eigenvalue–eigenvector pair, then
+    \(
+    (\overline{\lambda}, \overline{v})
+    \)
+    is also an eigenvalue–eigenvector pair.
+}

@@ -1,0 +1,119 @@
+\tsDef{2.1 (Matrix)}{\(A = [a_{ij}]{^m_{i=1}}{^n_{,j=1}}\) - $m$ rows, $n$ columns (\textit{Zeilen zuerst, Spalten später})}
+\newline
+\tsDef{2.2 (Matrix addition, scalat multiplication)}{Addition: \(A + B = [a_{ij}+b_{ij}]{^m_{i=1}}{^n_{,j=1}}\) \(\tsPoint\) Scalar multiplication: \(\lambda A = [\lambda a_{ij}]{^m_{i=1}}{^n_{,j=1}}\)}
+\newline
+\tsIdea{Matrix types}{\textbf{Identity matrix} ($a_{ii} = 1$ for all $i$): $I$
+    \(\tsPoint\) \textbf{Diagonal matrix} ($a_{ij} = 0$ for all $i \ne j$): $\operatorname{diag}(d_1,\dots,d_n)$
+    \(\tsPoint\) \textbf{Upper triangular matrix} ($a_{ij} = 0$ for all $i > j$): $U$
+    \(\tsPoint\) \textbf{Lower triangular matrix} ($a_{ij} = 0$ for all $i < j$): $L$
+    \(\tsPoint\) \textbf{Symmetric matrix} ($a_{ij} = a_{ji}$ for all $i,j$): \ $A=A^\top$
+    \(\tsPoint\) \textbf{Skew-symmetric matrix} ($a_{ij} = -a_{ji}$ for all $i,j$): \ $A=A^\top$
+}
+\newline
+\tsDef{2.4 (Matrix-vector product)}{Rows of matrix $(m \times n)$ with vector $(n$ elements), i.e.
+    \\
+    \(
+    u_1 = \sum_{i=1}^{m} a_{1,i}\, v_i, \
+    Ix = x;
+    \)
+    \textbf{Trace:} Sum of the diagonal entries.
+}
+\newline
+\tsDef{2.9 (Column space)}{The column space $\mathbf{C}(A)$ of $A$ is the span (set of all linear combinations) of the columns:
+    $\mathbf{C}(A) := \{A \mathbf{x} : \mathbf{x} \in \mathbb{R}^n\} \subseteq \mathbb{R}^m$
+}
+\newline
+\tsDef{2.10 (Rank)}{rank($A$) := the number of linearly independent column vectors of \(A\).}
+\newline
+\tsDef{2.11 (Transpose)}{Mirror the matrix along its diagonal. $A = $ {\scriptsize $\begin{bmatrix}
+                    1 & 2 & 3 \\
+                    4 & 5 & 6
+                \end{bmatrix}
+                \leftrightarrow
+                A^\top
+                \begin{bmatrix}
+                    1 & 4 \\
+                    2 & 5 \\
+                    3 & 6
+                \end{bmatrix}$}
+    \(\tsPoint\) \((A^\top)^\top = A\)
+}
+\newline
+\tsDef{2.13 (Row space)}{$\mathbf{R}(A) := \mathbf{C}(A^\top)$}
+\newline
+\tsDef{2.17 (Nullspace)}{Nullspace contains all input vectors that lead to output vector $\mathbf{0}$.
+    \\
+    $\mathbf{N}(A) = \{\mathbf{x}\in \mathbb{R}^n : A \mathbf{x} = \mathbf{0} \} \subseteq \mathbb{R}^n$
+}
+\newline
+\tsDef{2.27 (Kernel \& Image)}{\textbf{Kernel:} \(\mathbf{N}(A) = \mathbf{Ker}(T) := \{\mathbf{x} \in \mathbb{R}^n : T(\mathbf{x})=\mathbf{0}\} \subseteq \mathbb{R}^n\) (If $A$ is the unique $m \times n$ matrix such that $T = T_A$)
+    \(\tsPoint\) \textbf{Image:} \(\mathbf{C}(A) = \mathbf{Im}(T)
+    := \{T(\mathbf{x}) : \mathbf{x} \in \mathbb{R}^n \} \subseteq \mathbb{R}^m\) (If $A$ is the unique $m \times n$ matrix such that $T = T_A$), the set of all outputs that $T$ can produce.
+}
+\newline
+\tsIdea{2.2.2 Working with linear transformations}{A matrix can be understood as a re-mapping of the unit vectors,
+    scaling and re-orienting them.
+    Each column vector can then be understood as the new unit vector $e_i$,
+    hence essentially adding another coordinate system to the original one,
+    which is moved and rotated a certain way.
+    The rotation matrix under~2 is such an example.
+    To prove that $T$ is a linear transformation, use
+    \(
+    T(x+y) = T(x) + T(y)
+    \quad\text{and}\quad
+    T(\lambda x) = \lambda T(x).
+    \)
+    Then insert the linear transformation given by the task and replace
+    $x$ (or whatever variable there is) with $x+y$ or $\lambda x$.
+    \(
+    A x = \sum_{i=1}^{n} x_i v_i,
+    \)
+    where $v_i$ is the $i$-th column of $A$.}
+\newline
+\tsIdea{O 2.39 (Matrix multiplication)}{$A \times B = C$, \;
+    $c_{ij} = \sum_{k=1}^{n} a_{ik} b_{kj}$.
+    Dimension restrictions: $A$ is $m \times n$, $B$ is $n \times p$, result is $m \times p$.
+    For each entry, multiply the $i$-th row of $A$ with the $j$-th column of $B$.
+    \\
+    \textbf{Not commutative, but associative \& distributive.}}
+\newline
+\tsLem{2.40 Matrix multiplication with transposition}{\((AB)^\top = B^\top A^\top\)}
+\newline
+\tsDef{2.44 Outer product}{$\operatorname{rank}(A) = 1 \iff \exists$ non-zero vectors
+    $v \in \mathbb{R}^m$, $w \in \mathbb{R}^n$ such that
+    $A$ is an outer product, i.e.
+    \(
+    A = v w^{\mathrm T},
+    \)
+    thus $\operatorname{rank}(v w^{\mathrm T}) = 1$.
+}
+\tsThe{2.46 (CR decomposition)}{$A = C R$.
+    Get $R$ from (reduced) row echelon form.
+    $C$ is the columns from $A$ where there is a pivot in $R$.
+    $C \in \mathbb{R}^{m \times r}$,
+    $R \in \mathbb{R}^{r \times n}$ (in RREF),
+    $r = \operatorname{rank}(A)$. \textbf{Row Echelon Form:}
+    To find REF, try to create pivots:
+    \(
+    R_0 =
+    \begin{bmatrix}
+        \color{red}{1} & 0              & 2 & 3 \\
+        0              & \color{red}{1} & 2 & 1 \\
+        0              & 0              & 0 & 0
+    \end{bmatrix}.
+    \)
+    Use Gauss-Jordan elimination to find it (row transformations).
+    \textbf{Reduced REF:}
+    RREF is simply REF without any zero rows
+    (i.e.\ in $R_0$, $R$ (in RREF) would be $R_0$ without the last row).
+}
+\newline
+\tsIdea{O 2.5.6 (Invertible matrix)}{Matrix \(A\) is invertible if it is square and there is \(B\) such that:\\
+    \(AB=I \Leftrightarrow BA=I \Leftrightarrow AB=BA=I\)
+}
+\newline
+\tsDef{2.57 (Inverse matrix and its properties)}{If $AB=I$ for invertible \(A\), then \(B\) is its inverse and denoted as \(A^{-1}\).
+    \(\bullet\) $(A^{-1})^{-1} = A$ \quad
+    \(\bullet\) $(AB)^{-1} = B^{-1}A^{-1}$ \quad
+    \(\bullet\) $(A^{\top})^{-1} = (A^{-1})^{\top}$
+}

@@ -1,0 +1,127 @@
+\subsection{2 times 2}
+\tsDef{7.1.1 (\(2 \times 2\) Determinant)}{For
+    \(
+    A = \begin{bmatrix} a & b \\ c & d \end{bmatrix},
+    \quad
+    \det(A) = ad - bc.
+    \)
+}
+\newline
+\tsLem{7.1.2 (Multiplication of determinants)}{\(\det(AB) = \det(A)\det(B).\)
+    \\
+    Hence, for an $LU$-decomposition,
+    \(
+    \det(A) = \det(L)\det(U).
+    \)
+}
+\newline
+\tsDef{7.2.1 (Permutation sign)}{The sign of a permutation is defined as the number of swaps of rows or columns.
+    \(
+    \det(\text{permuted matrix}) = (-1)^k \det(\text{original matrix}),
+    \)
+    where $k$ is the number of swaps.
+    Even number of swaps $\Rightarrow +1$, odd number $\Rightarrow -1$.
+    \(
+    \operatorname{sgn}(\sigma \circ \gamma) = \operatorname{sgn}(\sigma)\operatorname{sgn}(\gamma).
+    \)
+    For all $n \ge 2$, half of the permutations have sign $+1$, half have sign $-1$.
+}
+\subsection{General case:}
+\tsDef{7.2.3 (Determinant big formula)}{For a square matrix $A \in \mathbb{R}^{n \times n}$, \\ \(\det(A) = \sum_{\sigma \in \Pi_n} \operatorname{sgn}(\sigma) \prod_{i=1}^{n} A_{i,\sigma(i)}\). \textit{(Number of permutations: n!)}
+}
+\begin{tcolorbox}[
+        colframe=blue!70!black,
+        colback=white,
+        boxrule=1pt,
+        left=-3mm, right=-3mm, top=1mm, bottom=1mm,
+        arc=3mm,
+    ]
+    \ \ \ \ \ \(\bullet\) \textbf{Determinant Properties:}
+    \begin{enumerate} [noitemsep, topsep=0pt]
+        \item
+              Matrix $T \in \mathbb{R}^{n \times n}$ is triangular, then \\
+              \(
+              \det(T) = \prod_{k=1}^{n} T_{kk},
+              \quad \text{in particular } \det(I)=1.
+              \)
+        \item
+              Matrix $A \in \mathbb{R}^{n \times n}$,
+              \(
+              \det(A) = \det(A^{T}).
+              \)
+        \item
+              Matrix $Q \in \mathbb{R}^{n \times n}$ is orthogonal
+              \(
+              \Longleftrightarrow \det(Q)=1 \text{ or } \det(Q)=-1.
+              \)
+        \item
+              Matrix $A \in \mathbb{R}^{n \times n}$ is invertible
+              \(
+              \Longleftrightarrow \det(A) \neq 0.
+              \)
+        \item
+              Matrices $A,B \in \mathbb{R}^{n \times n}$,
+              \(
+              \det(AB) = \det(A)\det(B), \\
+              \)
+              in particular $\det(A^n)=\det(A)^n$.
+        \item
+              Matrix $A \in \mathbb{R}^{n \times n}$,
+              \(
+              \det(A^{-1}) = \frac{1}{\det(A)}.
+              \)
+        \item
+              \(
+              \det(\lambda A) = \lambda^n \det(A).
+              \)
+    \end{enumerate}
+\end{tcolorbox}
+% Here:
+% \begin{itemize}[noitemsep, topsep=0pt]
+%     \item $A_{i,\sigma(i)}$ are permuted matrix entries,
+%     \item $\prod$ denotes the product of all selected entries,
+%     \item $\operatorname{sgn}(\sigma)=+1$ for even permutations, $-1$ for odd permutations,
+%     \item $\sum$ is the sum of all such signed products.
+% \end{itemize}
+\!\!\!\!\!\!\!\!\!\!\!\!
+\tsProp{7.2.4 (Determinant of orthogonal matrices)}{\(1 = \det(I) = \det(Q^{T}Q) = \det(Q^{T})\det(Q) = \det(Q)^2,\) so \(\det(Q) = \pm 1.\) If $\det(Q)=1$, then $Q$ is a rotation matrix. If $\det(Q)=-1$, then $Q$ is a reflection matrix.}
+\newline
+\tsProp{7.3.2 (Cofactor determinant calculation)}{\textbf{Co-factor method}:
+    \\
+    \(\det(A) = \sum_{j=1}^{n} A_{ij} C_{ij},\) where cofactors are
+    \(
+    C_{ij} = (-1)^{i+j}\det(A_{ij}),
+    \).
+}
+\newline
+\tsProp{7.3.5 (Cramer's Rule)}{\textbf{Cramer's Rule}:
+    For $Ax=b$ with $\det(A)\neq 0$,
+    \(
+    x_j = \frac{\det(\mathscr{B}_j)}{\det(A)},
+    \)
+    where $\mathscr{B}_j$ is the matrix obtained from $A$ by replacing the $j$-th column with $b$.
+}
+\newline
+\tsProp{7.3.7 (Linearity of a determinant)}{The determinant is linear in each row (and column). For example,
+    \(
+    \det
+    \begin{bmatrix}
+        \alpha_0 a_0^T + \alpha_1 a_1^T \\
+        a_2^T                           \\
+    \end{bmatrix}
+    =
+    \alpha_0
+    \det
+    \begin{bmatrix}
+        a_0^T \\
+        a_2^T \\
+    \end{bmatrix}
+    +
+    \alpha_1
+    \det
+    \begin{bmatrix}
+        a_1^T \\
+        a_2^T \\
+    \end{bmatrix}.
+    \)
+}

@@ -1,0 +1,51 @@
+\subsection{Computing the three fundamental subspaces}
+\tsThe{4.31 (Basis of \(C(A)\): Pivots columns of $\operatorname{RREF}$)}
+{\(R\) is RREF of \(A\), then all columns at pivots of \(R\) form a basis of \(C(A)\): \(\dim(C(A)) = \text{rank}(A) = r\)}
+\newline
+\tsThe{4.32 (Basis of \(R(A)\): Nonzero rows of $\operatorname{RREF}(A)$)}
+{Nonzero rows of $\operatorname{RREF}(A)$ form a basis of
+    $R(A)$, so, $\dim(R(A)) = r$.
+}
+\newline
+\tsThe{4.33 (Row rank equals columns rank)}{\(\text{rank}(A) = \text{rank}(A^\top)\)}
+\newline
+\tsCor{4.34 (Rank is at most min of the matrix dimensions)}{\(A\) is a \(m \times n\) matrix with rank \(r\) \(\Rightarrow\) \(r \leq \min(n,m)\).}
+\newline
+\tsLem{4.35 (Nullspace isomorphism)}{$R = \operatorname{RREF}(A)$, then \(T : N(R) \to \tsS{R}^{n-r}\) is an isomorphism between \(N(R)\) and \(\tsS{R}^{n-r}\) \(\Rightarrow\) \(\dim(N(R)) = n - r\).}
+\newline
+\tsThe{4.36 (Basis of \(N(A)\): Non-pivot columns of $\operatorname{RREF}(A)$)}
+{If $\operatorname{rank}(A)=r$, then \(\dim(N(A))=n-r.\)}
+% \[
+%     \begin{aligned}
+%         A    & ={\scriptsize
+%         \begin{pmatrix}
+%             1 & 2 & 0 & 3 \\
+%             2 & 4 & 1 & 4 \\
+%             3 & 6 & 2 & 5
+%         \end{pmatrix}},
+%         \qquad
+%         \operatorname{RREF}(A)={\scriptsize
+%         \begin{pmatrix}
+%             1 & 2 & 0 & 3  \\
+%             0 & 0 & 1 & -2 \\
+%             0 & 0 & 0 & 0
+%         \end{pmatrix}},      \\[6pt]
+%         C(A) & ={\scriptsize
+%         \operatorname{span}\!\left\{
+%         \begin{pmatrix}1\\2\\3\end{pmatrix},
+%         \begin{pmatrix}0\\1\\2\end{pmatrix}
+%         \right\}},
+%         \qquad
+%         R(A)={\scriptsize
+%         \operatorname{span}\!\left\{
+%         (1,2,0,3),(0,0,1,-2)
+%         \right\}},           \\[6pt]
+%         N(A) & ={\scriptsize
+%         \operatorname{span}\!\left\{
+%         \begin{pmatrix}-2\\1\\0\\0\end{pmatrix},
+%         \begin{pmatrix}-3\\0\\2\\1\end{pmatrix}
+%         \right\}}, \
+%         \dim(C(A))=\dim(R(A))=2,\;
+%         \dim(N(A))=2.
+%     \end{aligned}
+% \]

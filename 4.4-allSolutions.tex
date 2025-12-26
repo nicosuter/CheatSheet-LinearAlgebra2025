@@ -1,0 +1,19 @@
+\subsection{\texorpdfstring{All solutions of \(A\tsVec{x} = \tsVec{b}\)}{All solutions of Ax = b}}
+\tsDef{4.37 (Solution space)}{Solution space of \(A\tsVec{x} = \tsVec{b}\): \\ \(\textbf{Sol}(A, \tsVec{b}) := \tsB{\tsVec{x} \in \tsS{R}^n : A\tsVec{x} = \tsVec{b}} \subseteq \tsS{R}^n\)}
+\newline
+\tsThe{4.38 (Solution space from shifting the nullspace)}{Let \(\tsV{s}\) be some solution of \(A\tsVec{x} = \tsVec{b}\), then: \\ \(\textbf{Sol}(A, \tsVec{b}) := \tsB{\tsVec{s} + \tsVec{x} \in \tsS{R}^n : \tsVec{x} \in N(A)}\). \\ We can also compute $\textbf{Sol}(A, \tsV{b})$, although it is not a subspace.}
+\newline
+\tsThe{4.39 (Dimension of a solution space)}{Let $A\in\mathbb{R}^{m\times n}$ with rank $r$.
+    If $A\tsV{x}=\tsV{b}$ is solvable, then: \\
+    \(
+    \dim(\textbf{Sol}(A,\tsV{b}))=n-r
+    \),
+    and \(\dim(\textbf{Sol}(A,\tsV{b})) := \dim(N(A))\).
+}
+\newline
+\tsThe{4.40 (Systems of rank \(m\) are solvable)}{Let $A\in\mathbb{R}^{m\times n}$ with $\operatorname{rank}(A)=m$, $A\tsVec{x} = \tsVec{b}$ is solvable for all $\tsV{b}\in\mathbb{R}^m$.}
+\newline
+\tsThe{4.41 (Systems of rank less than $m$ are typ. unsolvable)}{Systems of rank $r < m$ are typically unsolvable.}
+\newline
+\tsDef{4.42 (Types of systems)}{Let $A\in\mathbb{R}^{m\times n}$ and $b\in\mathbb{R}^m$. The system $A\in\mathbb{R}^{m\times n}$ is called: \\ $\bullet \ m=n \Rightarrow \text{square ($A$ is a square matrix)}\ \star \  \textbf{typ. solvable} \\ \bullet \ m<n \Rightarrow \text{underdetermined ($A$ is a wide matrix)} \ \star \  \textbf{typ. solvable} \\ \bullet \ m>n \Rightarrow \text{overdetermined ($A$ is a tall matrix)} \ \star \  \textbf{typ. unsolvable}.$  \textbf{“Typical”} matrices are with $m \leq n$ and have rank $r = m$.}
+

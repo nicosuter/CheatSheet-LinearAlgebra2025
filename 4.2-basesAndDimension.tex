@@ -1,0 +1,51 @@
+\subsection{Bases and dimension}
+\tsDef{4.18 (Basis)}{Let \(V\) be a vector space.  A subset \(B \subseteq V\) is called a basis of \(V\) if \(B\) is linearly independent and it spans \
+    V: \(\text{Span}(B) = V\).}
+\newline
+\tsLem{4.19 (Independent columns is a basis)}{Independent columns form basis of column space C(A).}
+\newline
+\tsIdea{O 4.20 (Non-uniqueness of basis)}{Every set \(B = \tsB{\tsVec{v_1}, \tsVec{v_2}, ..., \tsVec{v_n}} \subseteq \tsS{R}^m\) of \(m\) linearly independent vectors is a basis of \(\tsS{R}^m\).}
+\newline
+\tsDef{4.21 (Finitely generated vector space)}{There is a finite subset \(G \subseteq V\) with \(\text{Span}(G) = V\). Then \(V\) has a basis \(B \subseteq G\).}
+\newline
+\tsThe{4.22 (Finitely generated VS has a basis)}{If \(V\) is finitely generated, then \(V\) has a basis \(B \subseteq V\).}
+\newline
+\tsLem{4.23 (Steinitz exchange lemma)}
+{\textit{"exchanging elements between G and F”}
+    \\
+    \(V\) is finitely generated vector space, \(F \subseteq V\) a finite set of lin. independent vectors, and \(G \subseteq V\) a finite set of vectors with \(\text{Span}(G) = V\), then:  \(\bullet \ |V| \leq |G|\) and \( \bullet \ \exists E \subseteq G\) of size \(|G|-|F|\) such that \(\text{Span}(F \cup E) = V\).
+}
+\newline
+\tsThe{4.24 (All bases have the same size)}{All bases have the same size: \(B,B'\in V \Rightarrow |B|=|B'|\).}
+\newline
+\tsDef{4.25 (Dimension)}{\(\dim(V)\) - the dimesions of \(V\). It has a size of arbitrary basis \(B\) of \(V\).}
+\newline
+\tsDef{4.26 (Linear transformation between vector spaces)}{Let $V, W$ be vector spaces. A function $T : V \to W$ is linear if, for all
+    $x_1, x_2 \in V$ and $\lambda_1, \lambda_2 \in \mathbb{R}$,
+    \(
+    \
+    T(\lambda_1 x_1 + \lambda_2 x_2)
+    = \lambda_1 T(x_1) + \lambda_2 T(x_2).
+    \)
+}
+\newline
+\tsLem{4.27 (Bijective lin. transformations preserve basis)}
+{If $T:V\to W$ is a bijective linear map, then $B\subseteq V$ is a basis of $V$
+    \(\Leftrightarrow\) $T(B)$ is a basis of $W$, and hence $\dim (V)=\dim (W)$.
+}
+\newline
+\tsDef{4.28 (Isomorphic vector spaces)}{$V \cong W \iff \exists\, T:V\to W \text{ linear and bijective.}$
+}
+\newline
+\tsThe{4.29 (Basis writes vectors as a unique lin. combination)}
+{Let $V$ be a finite-dimensional vector space with basis
+    $B=\{v_1,\dots,v_m\}$. Then every $v\in V$ can be written uniquely as
+    \(
+    v=\sum_{j=1}^m \lambda_j v_j,
+    \)
+    for unique scalars $\lambda_1,\dots,\lambda_m$.
+}
+\newline
+\tsLem{4.30 (Less than \(\dim(V)\) vectors do not span \(V\))}
+{If $|G| < \dim V$, then $\operatorname{span}(G) \neq V$.}
+\newline
